@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         ivWeb = findViewById(R.id.ivWeb);
         ivLocation = findViewById(R.id.ivLocation);
 
+        ivFace.setVisibility(View.GONE);
+        ivCall.setVisibility(View.GONE);
+        ivWeb.setVisibility(View.GONE);
+        ivLocation.setVisibility(View.GONE);
+
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +44,30 @@ public class MainActivity extends AppCompatActivity {
                         com.example.intentschallenge.SecondActivity.class);
 
                 startActivityForResult(intent, SECONDACTIVITY);
+            }
+        });
+
+        ivCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
+                startActivity(intent);
+            }
+        });
+
+        ivWeb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://" + web));
+                startActivity(intent);
+            }
+        });
+
+        ivLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0.0?q=" + location));
+                startActivity(intent);
             }
         });
     }
@@ -76,30 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 ivCall.setVisibility(View.VISIBLE);
                 ivWeb.setVisibility(View.VISIBLE);
                 ivLocation.setVisibility(View.VISIBLE);
-
-                ivCall.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
-                        startActivity(intent);
-                    }
-                });
-
-                ivWeb.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://" + web));
-                        startActivity(intent);
-                    }
-                });
-
-                ivLocation.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0.0?q=" + location));
-                        startActivity(intent);
-                    }
-                });
             }
 
             if (resultCode == RESULT_CANCELED) {

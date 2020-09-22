@@ -27,7 +27,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:srcCompat="@drawable/smile" />
 
     <ImageView
@@ -37,7 +37,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:clickable="true"
-        android:visibility="gone"
+        android:visibility="visible"
         app:srcCompat="@drawable/phone" />
 
     <ImageView
@@ -47,7 +47,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        android:visibility="gone"
+        android:visibility="visible"
         app:srcCompat="@drawable/web" />
 
     <ImageView
@@ -57,7 +57,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        android:visibility="gone"
+        android:visibility="visible"
         app:srcCompat="@drawable/location" />
 
     <Button
